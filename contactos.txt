@@ -1,1 +1,1 @@
-{"nombre": "javier", "telefono": "645444444"}
+{"nombre": "javier", "telefono": "645444444"}{"nombre": "pepe", "telefono": "666666666"}

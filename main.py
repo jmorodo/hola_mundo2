@@ -14,16 +14,17 @@ def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
 @app.post("/contacto_nuevo/")
-async def create_item(nombre: str,apellido:str,telefono:str):
-    return guarda_datos(nombre=nombre,apellido=apellido,telefono=telefono)
+async def create_item(nombre: str,telefono:str):
+    return guarda_datos(nombre=nombre,telefono=telefono)
      
 
-def guarda_datos(nombre,apellido,telefono):
+def guarda_datos(nombre,telefono):
     f = open('contactos.txt', 'a')
     with open('contactos.txt', 'a') as f:
         # Procesamiento del fichero
         data_set = {"nombre": nombre, "telefono": telefono}
-        json_dump = json.dumps(data_set)
+        json_read=read()
+        json_dump = json_read.update(data_set)
         f.write(json_dump)
 
     f.close()
