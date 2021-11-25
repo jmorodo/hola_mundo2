@@ -24,7 +24,7 @@ def guarda_datos(nombre,telefono):
         # Procesamiento del fichero
         data_set = {"nombre": nombre, "telefono": telefono}
         json_read=read()
-        json_dump = json_read.update(data_set)
+        json_dump = json_read.dump(data_set)
         f.write(json_dump)
 
     f.close()
@@ -37,3 +37,12 @@ def read():
         json_object = json. loads(f.read())
         
     return json_object
+
+@app.get("/borrar_contactos/")
+def borrar():
+    
+    f = open('contactos.txt', 'w')
+    with open('contactos.txt', 'w') as f:
+        f.write("")
+        
+    return ""
