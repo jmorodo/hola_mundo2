@@ -40,6 +40,7 @@ def read():
 @app.get("/borrar_contactos/")
 def borrar():
     
+    
     f = open('contactos.txt', 'w')
     with open('contactos.txt', 'w') as f:
         f.write("")
