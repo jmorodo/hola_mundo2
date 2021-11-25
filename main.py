@@ -23,8 +23,7 @@ def guarda_datos(nombre,telefono):
     with open('contactos.txt', 'a') as f:
         # Procesamiento del fichero
         data_set = {"nombre": nombre, "telefono": telefono}
-        json_read=read()
-        json_dump = json_read.dump(data_set)
+        json_dump = json.dumps(data_set)
         f.write(json_dump)
 
     f.close()
